@@ -27,7 +27,7 @@ module SocialSecurityNumber
     end
 
     def count_last_number(number = '0')
-      97 - (("#{number}#{@year}#{@month}#{@day}#{@individual}").to_i % 97)
+      97 - (("#{number}#{value_from_parsed_civil_number('year')}#{value_from_parsed_civil_number('month')}#{value_from_parsed_civil_number('day')}#{value_from_parsed_civil_number('indv')}").to_i % 97)
     end
   end
 end
